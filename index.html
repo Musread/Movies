@@ -5,6 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies : a specific history</title>
+    <link rel="stylesheet" href="app.css" />
   </head>
-  <body></body>
+  <body>
+    <svg viewBox="0 0 600 300">
+      <!-- Symbol with text-->
+      <symbol id="s-text">
+        <text
+          class="text--line"
+          text-anchor="middle"
+          x="50%"
+          y="50%"
+          dy=".35em"
+        >
+          Interstellar
+        </text>
+      </symbol>
+      <!-- Clippath with text-->
+      <clippath id="cp-text">
+        <text
+          class="text--line"
+          text-anchor="middle"
+          x="50%"
+          y="50%"
+          dy=".35em"
+        >
+          Movies
+        </text>
+      </clippath>
+      <!-- Group for shadow-->
+      <g class="shadow" clip-path="url(#cp-text)">
+        <rect
+          class="anim-shape anim-shape--shadow"
+          width="100%"
+          height="100%"
+        ></rect>
+      </g>
+      <!-- Group with clippath for text-->
+      <g class="colortext" clip-path="url(#cp-text)">
+        <rect class="anim-shape" width="100%" height="100%"></rect>
+        <rect class="anim-shape" width="80%" height="100%"></rect>
+        <rect class="anim-shape" width="60%" height="100%"></rect>
+        <rect class="anim-shape" width="40%" height="100%"></rect>
+        <rect class="anim-shape" width="20%" height="100%"></rect>
+      </g>
+      <!-- Transparent copy of text to keep patterned text selectable-->
+      <use class="text--transparent" xlink:href="#s-text"></use>
+    </svg>
+  </body>
 </html>
